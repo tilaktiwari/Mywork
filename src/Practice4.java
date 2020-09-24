@@ -5,6 +5,7 @@ public class Practice4 {
   static  int ticketNum;
   static  double ticketPrice;
    static double totalPrice;
+   static double netPay;
 
 
     public static void doInput(){
@@ -50,15 +51,36 @@ public class Practice4 {
     }
 
 
+
     public static void doProses(){
         totalPrice=ticketPrice*ticketNum;
+    }
+    public static void doNetPay(){
+        if(totalPrice<=100){
+            netPay=totalPrice;
+        }
+        else if (totalPrice>100 && totalPrice<=500){
+             netPay=totalPrice*.90; // Giving 10% discount
+        }
+        else if (totalPrice<500 && totalPrice<=1000){
+            netPay=totalPrice*.80; // Giving 20% discount
+        }
+        else if (totalPrice<1000 && totalPrice<=5000){
+            netPay=totalPrice*.75; // Giving 25% discount
+        }
+        else if (totalPrice<5000){
+            netPay=totalPrice*.70; // Giving 30% discount
+        }
+
     }
 
     public static void outPut(){
         System.out.println("********Welcome to Cinema********");
         System.out.println("Your today's movie is        : " + movieName);
+        System.out.println("Your quantity of ticket is   : "  +ticketNum);
         System.out.println("Price of per ticket is       : $" +ticketPrice);
-        System.out.println("The total price of ticket is : $" +ticketPrice);
+        System.out.println("The total price of ticket is : $" +totalPrice);
+        System.out.println("The net price of ticket is   : $" +netPay);
         System.out.println("   ****** Enjoy the movie********");
 
     }
@@ -70,6 +92,7 @@ public class Practice4 {
 //        obj.outPut();
         doInput();
         doProses();
+        doNetPay();
         outPut();
     }
 }

@@ -1,4 +1,4 @@
-import java.sql.SQLOutput;
+
 
 public class Practice2 {
     String name;
