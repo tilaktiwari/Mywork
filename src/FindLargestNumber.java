@@ -24,7 +24,7 @@ public class FindLargestNumber {
             }
         }
         public static void main(String[]args){
-            FindLargestNumber obj =new FindLargestNumber();
+            FindLargestnum obj =new FindLargestnum();
             obj.findLargestNum();
         }
 }
